@@ -88,7 +88,6 @@ body {
 @media screen and (max-width: 400px) {
 	#url {
 		bottom: -10vw;
-		left: 5vw;
 		position: absolute;
 		width: 100%;
 	}
