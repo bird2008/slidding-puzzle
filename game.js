@@ -14,6 +14,10 @@ let gameState = [
 ];
 
 function render(gameBoard, gameState) {
+	gameTiles.forEach((tile) => {
+		tile.style.backgroundSize = "300px 300px";
+	});
+
 	gameState.forEach((row, rowIndex) => {
 		row.forEach((column, columnIndex) => {
 			column.style.top = `${rowIndex * 100}px`;
@@ -88,8 +92,11 @@ submitButton.addEventListener("click", () => {
 	if (!(value === "")) {
 		gameTiles.forEach((tile) => {
 			tile.style.cssText = "background: url(" + value + ");";
-			lastValue = value;
 		});
+		gameTiles.forEach((tile) => {
+			tile.style.backgroundSize = "300px 300px";
+		});
+		lastValue = value;
 		let lastRow = gameState[gameState.length - 1];
 		let lastTile = lastRow[lastRow.length - 1];
 		lastTile.style.cssText = "background-color: transparent;border: none;";
